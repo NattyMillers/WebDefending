@@ -9,7 +9,7 @@ import java.util.List;
 public class ServerMain {
     static class Config {
         public static final int DEFAULT_NUM_THREADS = 4;
-        public static final int DEFAULT_PORT = 8080;
+        public static final int DEFAULT_PORT = 2829;
     }
 
     public static void main(String args[]) {

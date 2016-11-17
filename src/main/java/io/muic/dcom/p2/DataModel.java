@@ -31,50 +31,27 @@ public class DataModel {
     DataModel() {
 
 
-
-
     }
 
     /// IMPLEMENTS CONSTRUCTOR //
     public void postObserve(String parcelId, String stationId, long timestamp) {
-
         ParcelObserved parcelObserved = new ParcelObserved(parcelId, stationId, timestamp);
+
+        if (hashCount.containsKey(stationId)){
+            hashCount.put(stationId, hashCount.get(stationId)+ 1L);}
+
+        else{
+            hashCount.put(stationId, 1L);}
 
         if (!hashTrail.containsKey(parcelId)){
             List<ParcelObserved> a = new ArrayList<>(Arrays.asList(parcelObserved));
             hashTrail.put(parcelId, a);}
+
         else {
-
             hashTrail.get(parcelId).add(parcelObserved);
-
         }
 
-        if (hashCount.containsKey(stationId)){
-
-
-            hashCount.put(stationId, hashCount.get(stationId)+ 1L);}
-        else{
-            hashCount.put(stationId, 1L);}
-
-
-
-//        ParcelObserved parcelObserved = new ParcelObserved(parcelId, stationId, timestamp);
-//
-//        if (!hashTrail.containsKey(parcelId)){
-//            ArrayList<ParcelObserved> b = new ArrayList<>(Arrays.asList(parcelObserved));
-//            hashTrail.put(parcelId, b);
-//        }else {
-//            hashTrail.get(parcelId).add(parcelObserved);
-//        }
-//
-//        if (!hashCount.containsKey(stationId)){
-//            hashCount.put(stationId, 1L);
-//        }else{
-//            long counter = hashCount.get(stationId);
-//            counter += 1L;
-//            hashCount.put(stationId, counter);
-
-        }
+    }
 
 
     // Display only that parceID  <parceID, that station>
@@ -86,11 +63,13 @@ public class DataModel {
             return new ArrayList<>();
         }
 
-
     }
 
     // Count only if that station ID < StationID , howmany (Count) >
     public long getStopCount(String stationId) {
+        if (!hashCount.containsKey(stationId)){ return 0L;}
+        else{
         return hashCount.get(stationId);
+        }
     }
 }

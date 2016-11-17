@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c2863c37-9fec-439a-8665-bebf016afaaf" name="Default" comment="" />
+    <list default="true" id="c2863c37-9fec-439a-8665-bebf016afaaf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/muic/dcom/p2/DataModel.java" afterPath="$PROJECT_DIR$/src/main/java/io/muic/dcom/p2/DataModel.java" />
+    </list>
     <ignored path="p2.1-starter.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -38,8 +40,8 @@
       <file leaf-file-name="DataModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/muic/dcom/p2/DataModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5179584">
-              <caret line="64" column="0" selection-start-line="63" selection-start-column="9" selection-end-line="64" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.056710776">
+              <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -524,7 +526,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../tleDraft3/Project2Pahse1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../d4" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -908,8 +910,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/muic/dcom/p2/DataModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5179584">
-          <caret line="64" column="0" selection-start-line="63" selection-start-column="9" selection-end-line="64" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.056710776">
+          <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
           <folding />
         </state>
       </provider>

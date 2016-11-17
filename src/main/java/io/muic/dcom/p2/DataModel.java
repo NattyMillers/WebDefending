@@ -44,12 +44,19 @@ public class DataModel {
             hashCount.put(stationId, 1L);}
 
         if (!hashTrail.containsKey(parcelId)){
-            List<ParcelObserved> a = new ArrayList<>(Arrays.asList(parcelObserved));
+
+            List<ParcelObserved> a = helper(parcelObserved);
             hashTrail.put(parcelId, a);}
 
         else {
             hashTrail.get(parcelId).add(parcelObserved);
         }
+
+    }
+    public synchronized List<ParcelObserved> helper(ParcelObserved parcelObserved){
+        return new ArrayList<>(Arrays.asList(parcelObserved));
+
+
 
     }
 

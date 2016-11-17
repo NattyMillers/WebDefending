@@ -25,15 +25,11 @@ public class DataModel {
 
     }
 
-    private ConcurrentHashMap<String, ArrayList<ParcelObserved>> hashTrail = new ConcurrentHashMap<>();
-
+    private ConcurrentHashMap<String, List<ParcelObserved>> hashTrail = new ConcurrentHashMap<>();
     private ConcurrentHashMap<String, Long> hashCount = new ConcurrentHashMap<>();
-    private Long count ;
 
     DataModel() {
-//        hashTrail = new ConcurrentHashMap<>();
-//        hashCount = new ConcurrentHashMap<>();
-//        count = 1L;
+
 
 
 
@@ -45,30 +41,52 @@ public class DataModel {
         ParcelObserved parcelObserved = new ParcelObserved(parcelId, stationId, timestamp);
 
         if (!hashTrail.containsKey(parcelId)){
-            ArrayList<ParcelObserved> b = new ArrayList<>(Arrays.asList(parcelObserved));
-            hashTrail.put(parcelId, b);
-        }else {
+            List<ParcelObserved> a = new ArrayList<>(Arrays.asList(parcelObserved));
+            hashTrail.put(parcelId, a);}
+        else {
+
             hashTrail.get(parcelId).add(parcelObserved);
-        }
-
-        if (!hashCount.containsKey(stationId)){
-            hashCount.put(stationId, 1L);
-        }else{
-            long counter = hashCount.get(stationId);
-            counter += 1L;
-            hashCount.put(stationId, counter);
 
         }
 
-    }
+        if (hashCount.containsKey(stationId)){
+
+
+            hashCount.put(stationId, hashCount.get(stationId)+ 1L);}
+        else{
+            hashCount.put(stationId, 1L);}
+
+
+
+//        ParcelObserved parcelObserved = new ParcelObserved(parcelId, stationId, timestamp);
+//
+//        if (!hashTrail.containsKey(parcelId)){
+//            ArrayList<ParcelObserved> b = new ArrayList<>(Arrays.asList(parcelObserved));
+//            hashTrail.put(parcelId, b);
+//        }else {
+//            hashTrail.get(parcelId).add(parcelObserved);
+//        }
+//
+//        if (!hashCount.containsKey(stationId)){
+//            hashCount.put(stationId, 1L);
+//        }else{
+//            long counter = hashCount.get(stationId);
+//            counter += 1L;
+//            hashCount.put(stationId, counter);
+
+        }
+
+
     // Display only that parceID  <parceID, that station>
-    public ArrayList<ParcelObserved> getParcelTrail(String parcelId) {
-
-        if (!hashTrail.containsKey(parcelId)) {
-            return new ArrayList<>();
-        }else{
-        return hashTrail.get(parcelId);
+    public List<ParcelObserved> getParcelTrail(String parcelId) {
+        if (hashTrail.containsKey(parcelId)){
+            return  new ArrayList<>(hashTrail.get(parcelId));
         }
+        else {
+            return new ArrayList<>();
+        }
+
+
     }
 
     // Count only if that station ID < StationID , howmany (Count) >
